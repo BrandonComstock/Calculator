@@ -1,0 +1,14 @@
+#calculator {
+    display: flex;
+}
+
+#numbers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+}
+
+.number {
+    box-sizing: border-box;
+}
