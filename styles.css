@@ -1,15 +1,20 @@
 #calculator {
     display: flex;
+    flex-direction: column;
 }
 
 #numbers {
     display: flex;
     flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 85px;
     border: 1px solid black;
 }
 
 .number {
     box-sizing: border-box;
+}
+
+#zero {
+    align-self: flex-end;
 }
