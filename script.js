@@ -1,3 +1,17 @@
+const numbers = document.querySelector("#numbers");
+
+for (let i = 0; i <= 9; i++) {
+    const number = document.createElement("button");
+    number.textContent = i;
+    number.id = i;
+    number.classList = "number";
+    numbers.appendChild(number);
+}
+
+
+
+
+
 let number1 = 0;
 let operator = "";
 let number2 = 0;
