@@ -1,27 +1,37 @@
 #calculator {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    border: 1px solid black;
 }
 
 #numbers {
     display: flex;
     flex-wrap: wrap;
-    /* width: 75px;
-    height: 85px; */
     flex-direction: column;
     border: 1px solid black;
     justify-content: center;
     align-items: center;
+    background-color: lightgray;
 }
 
-.number {
-    box-sizing: border-box;
+#display {
+    border: 1px solid black;
+    width: 113px;
+    text-align: center;
 }
-
-
 
 .third #zero {
+    display: flex;
+}
+
+#operators {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#body {
     display: flex;
 }
