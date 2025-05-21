@@ -1,6 +1,6 @@
 const numbers = document.querySelectorAll(".number");
 const display = document.querySelector("#display");
-const operators = document.querySelector("#operators");
+const operators = document.querySelectorAll(".operator");
 
 
 let number1 = "";
@@ -34,13 +34,15 @@ function clear() {
     number2 = "";
 }
 
+function equals() {
+    
+}
+
+
+
 
 function getResult() {
-    operators.forEach(element => {
-        element.addEventListener("click", (e) => {
-
-        })
-    });
+    
 }
 
 function populateDisplay(num) {
@@ -51,5 +53,12 @@ numbers.forEach(element => {
     element.addEventListener("click", (e) => {
         number1 += element.textContent;
         populateDisplay(number1)
+    })
+});
+
+operators.forEach(element => {
+    element.addEventListener("click", (e) => {
+        const operation = this[element.id];
+        operation();
     })
 });
