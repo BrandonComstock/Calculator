@@ -14,12 +14,14 @@
     justify-content: center;
     align-items: center;
     background-color: lightgray;
+    padding: 2px;
 }
 
 #display {
     border: 1px solid black;
     width: 113px;
     text-align: center;
+    background: lightgreen;
 }
 
 .third #zero {
@@ -30,8 +32,17 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column-reverse;
+    background-color: darkgray;
+    width: 25px;
+    padding: 2px;
 }
-
+.operator {
+    background-color: silver;
+}
 #body {
     display: flex;
+}
+
+#clear {
+    background-color: red;
 }
