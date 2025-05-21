@@ -1,20 +1,27 @@
 #calculator {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #numbers {
     display: flex;
     flex-wrap: wrap;
-    width: 75px;
-    height: 85px;
+    /* width: 75px;
+    height: 85px; */
+    flex-direction: column;
     border: 1px solid black;
+    justify-content: center;
+    align-items: center;
 }
 
 .number {
     box-sizing: border-box;
 }
 
-#zero {
-    align-self: flex-end;
+
+
+.third #zero {
+    display: flex;
 }
