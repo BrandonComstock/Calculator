@@ -49,6 +49,7 @@ function populateDisplay(num) {
     display.textContent = num;
 }
 
+
 numbers.forEach(element => {
     element.addEventListener("click", (e) => {
         number1 += element.textContent;
@@ -58,7 +59,7 @@ numbers.forEach(element => {
 
 operators.forEach(element => {
     element.addEventListener("click", (e) => {
-        const operation = this[element.id];
-        operation();
+        let operation = element.id
+        
     })
 });
