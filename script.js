@@ -50,9 +50,6 @@ loop over each operator
 once equals button is clicked, perform operate function on all variables and update display
 */
 
-let numberToBeStored = values.number1;
-
-
 function toggle() {
     if (values.number1 !== "") {
         return false;
@@ -76,7 +73,7 @@ numbers.forEach(element => {
         if (toggle()) {
             values.number1 += element.textContent;
         } else {
-            values.number2 += element.textContent
+            values.number2 += element.textContent;
         }
     })
 });
