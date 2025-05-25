@@ -10,7 +10,7 @@ const  values = {
 
 
 function add(num1, num2) {
-    return num1 + num2;
+    return parseInt(num1) + parseInt(num2);
 }
 
 function subtract(num1, num2) {
@@ -54,10 +54,10 @@ let numberToBeStored = values.number1;
 
 
 function toggle() {
-    if (numberToBeStored === values.number1) {
-        numberToBeStore = values.number2;
-    } else {
-        numberToBeStore = values.number1;
+    if (values.number1 !== "") {
+        return false;
+    }   else {
+        return true;
     }
 }
 
@@ -73,7 +73,11 @@ function populateDisplay(content) {
 numbers.forEach(element => {
     element.addEventListener("click", (e) => {
         populateDisplay(element.textContent);
-        numberToBeStored += element.textContent;
+        if (toggle()) {
+            values.number1 += element.textContent;
+        } else {
+            values.number2 += element.textContent
+        }
     })
 });
 
