@@ -25,7 +25,10 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-function operate(op, num1, num2) {
+function operate(opString, num1, num2) {
+    // since opString is a string it must use the window object to refer to the actual function
+    let op = window[opString]
+
     return op(num1, num2);
 }
 
@@ -70,6 +73,7 @@ function populateDisplay(content) {
 numbers.forEach(element => {
     element.addEventListener("click", (e) => {
         populateDisplay(element.textContent);
+        numberToBeStored += element.textContent;
     })
 });
 
@@ -78,7 +82,7 @@ numbers.forEach(element => {
 operators.forEach(element => {
     element.addEventListener("click", (e) => {
         if (element.id !== "equals") {
-            let operation = element.id
+            values.operator = element.id
         }
         if (element.id === "clear") {
             clear();
@@ -86,8 +90,9 @@ operators.forEach(element => {
             populateDisplay(` ${element.textContent} `);
             toggle();
 
-            if (operation === "equals") {
-                populateDisplay(operate(operation, values.number1, values.number2));
+            if (element.id === "equals") {
+                console.log(values);
+                populateDisplay(operate(values.operator, values.number1, values.number2));
             }
         }
         
