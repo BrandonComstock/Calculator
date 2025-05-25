@@ -60,18 +60,16 @@ function toggle() {
 
 
 function populateDisplay(content) {
+    if (display.textContent == 0) {
+        display.textContent = "";
+    }
     display.textContent += content;
 }
 
 
 numbers.forEach(element => {
     element.addEventListener("click", (e) => {
-        if (display.textContent === 0) {
-            numberToBeStored = element.textContent;
-        } else {
-            numberToBeStored += element.textContent;
-        }
-        populateDisplay(numberToBeStored);
+        populateDisplay(element.textContent);
     })
 });
 
