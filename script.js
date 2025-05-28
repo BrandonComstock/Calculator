@@ -6,6 +6,7 @@ const  values = {
     number1: "",
     operator: "",
     number2: "",
+    switch: true
 }
 
 
@@ -51,10 +52,10 @@ once equals button is clicked, perform operate function on all variables and upd
 */
 
 function toggle() {
-    if (values.number1 !== "") {
-        return false;
-    }   else {
-        return true;
+    if (values.switch) {
+        values.switch = false;
+    } else {
+        values.switch = true;
     }
 }
 
@@ -70,7 +71,7 @@ function populateDisplay(content) {
 numbers.forEach(element => {
     element.addEventListener("click", (e) => {
         populateDisplay(element.textContent);
-        if (toggle()) {
+        if (values.switch) {
             values.number1 += element.textContent;
         } else {
             values.number2 += element.textContent;
