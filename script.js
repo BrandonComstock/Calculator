@@ -43,7 +43,7 @@ function clear() {
 
 function equals(opString, num1, num2) {
     if (num1 === "" || num2 === "") {
-        display.textContent("Error");
+        display.textContent = "Error";
     } else {
         let result = operate(opString, num1, num2)
         //round to 2 decimal places
@@ -52,7 +52,7 @@ function equals(opString, num1, num2) {
         if (result === Infinity) {
             result = "cant divide by zero";
         }
-        
+
         display.textContent = result;
         values.number1 = result;
         values.number2 = "";
@@ -107,9 +107,11 @@ operators.forEach(element => {
         if (element.id === "clear") {
             clear();
         } else {
-            populateDisplay(` ${element.textContent} `);
-            toggle();
-
+            if (!display.textContent.includes(element.textContent)) {
+                populateDisplay(` ${element.textContent} `);
+                toggle();
+            }
+           
             if (element.id === "equals") {
                 equals(values.operator, values.number1, values.number2);
             }
