@@ -41,6 +41,14 @@ function clear() {
 }
 
 
+function equals(opString, num1, num2) {
+    if (num1 === "" || num2 === "") {
+        display.textContent("Error");
+    } else {
+        populateDisplay(operate(opString, num1, num2));
+    }
+}
+
 /* 
 loop over each number
     make each time it is clicked update the display, 
@@ -94,7 +102,7 @@ operators.forEach(element => {
 
             if (element.id === "equals") {
                 console.log(values);
-                populateDisplay(operate(values.operator, values.number1, values.number2));
+                equals(values.operator, values.number1, values.number2);
             }
         }
         
