@@ -11,7 +11,7 @@ const  values = {
 
 
 function add(num1, num2) {
-    return parseInt(num1) + parseInt(num2);
+    return parseFloat(num1) + parseFloat(num2);
 }
 
 function subtract(num1, num2) {
@@ -45,7 +45,13 @@ function equals(opString, num1, num2) {
     if (num1 === "" || num2 === "") {
         display.textContent("Error");
     } else {
-        populateDisplay(operate(opString, num1, num2));
+        let result = operate(opString, num1, num2)
+        //round to 2 decimal places
+        result = Math.round(result * 100) / 100;
+
+        display.textContent = result;
+        values.number1 = result;
+        values.number2 = "";
     }
 }
 
