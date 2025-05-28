@@ -29,7 +29,7 @@ function divide(num1, num2) {
 function operate(opString, num1, num2) {
     // since opString is a string it must use the window object to refer to the actual function
     let op = window[opString]
-
+ 
     return op(num1, num2);
 }
 
@@ -49,6 +49,10 @@ function equals(opString, num1, num2) {
         //round to 2 decimal places
         result = Math.round(result * 100) / 100;
 
+        if (result === Infinity) {
+            result = "cant divide by zero";
+        }
+        
         display.textContent = result;
         values.number1 = result;
         values.number2 = "";
@@ -107,7 +111,6 @@ operators.forEach(element => {
             toggle();
 
             if (element.id === "equals") {
-                console.log(values);
                 equals(values.operator, values.number1, values.number2);
             }
         }
