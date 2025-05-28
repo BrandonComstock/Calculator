@@ -101,13 +101,15 @@ numbers.forEach(element => {
 
 operators.forEach(element => {
     element.addEventListener("click", (e) => {
+        let temp = values.operator;
         if (element.id !== "equals") {
             values.operator = element.id
         }
         if (element.id === "clear") {
             clear();
         } else {
-            if (!display.textContent.includes(element.textContent)) {
+            if (temp.length === 0) {
+                console.log(values.operator);
                 populateDisplay(` ${element.textContent} `);
                 toggle();
             }
