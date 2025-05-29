@@ -88,10 +88,14 @@ function populateDisplay(content) {
 
 numbers.forEach(element => {
     element.addEventListener("click", (e) => {
-        populateDisplay(element.textContent);
+        if (values.number2 === "") {
+            display.textContent = element.textContent;
+        } else {
+            populateDisplay(element.textContent);
+        }
         if (values.switch) {
             values.number1 += element.textContent;
-            display.textContent = values.number1;
+            display.textContent = values.number1
         } else {
             values.number2 += element.textContent;
             display.textContent = values.number2;
