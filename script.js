@@ -91,8 +91,10 @@ numbers.forEach(element => {
         populateDisplay(element.textContent);
         if (values.switch) {
             values.number1 += element.textContent;
+            display.textContent = values.number1;
         } else {
             values.number2 += element.textContent;
+            display.textContent = values.number2;
         }
     })
 });
@@ -110,7 +112,7 @@ operators.forEach(element => {
         } else {
             if (temp.length === 0) {
                 console.log(values.operator);
-                populateDisplay(` ${element.textContent} `);
+                // populateDisplay(` ${element.textContent} `);
                 toggle();
             }
            
